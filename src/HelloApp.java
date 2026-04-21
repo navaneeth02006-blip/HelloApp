@@ -7,13 +7,15 @@ public class HelloApp {
             return;
         }
 
-        StringBuilder names = new StringBuilder();
+        StringBuilder nameBuilder = new StringBuilder();
 
         for (String name : args) {
-            if (names.length() > 0) {
-                names.append(", ");
-            }
-            names.append(name);
+            nameBuilder.append(name).append(", ");
+        }
+
+        String names = "";
+        if (nameBuilder.length() > 0) {
+            names = nameBuilder.substring(0, nameBuilder.length() - 2);
         }
 
         System.out.println("Hello, " + names + "!");
